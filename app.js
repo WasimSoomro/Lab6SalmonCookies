@@ -19,11 +19,6 @@ let hours = [
 let salesTable = document.getElementById("salesTable");
 let storeInfo = [];
 
-
-
-
-
-
 // *** Constructor Function ***
 function Store(name, minCust, maxCust, avgCookie) {
   this.name = name;
