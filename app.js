@@ -17,8 +17,12 @@ let hours = [
 ];
 
 let salesTable = document.getElementById("salesTable");
-
 let storeInfo = [];
+
+
+
+
+
 
 // *** Constructor Function ***
 function Store(name, minCust, maxCust, avgCookie) {
@@ -144,3 +148,22 @@ renderFooter();
 //   }
 // }
 // renderStore();
+
+let myForm = document.getElementById('cookieForm');
+
+function handleSubmit(event){
+  event.preventDefault();
+
+  let name = event.target.name.value;
+  let minCust = event.target.minCust.value;
+  let maxCust = event.target.maxCust.value;
+  let avgCookie = event.target.avgCookie.value;
+
+  let newStore = new Store(name, minCust, maxCust, avgCookie);
+  
+  storeInfo.push(newStore);
+  newStore.renderList();
+
+  myForm.reset();
+};
+myForm.addEventListener('submit', handleSubmit);
