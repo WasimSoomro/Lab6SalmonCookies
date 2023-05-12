@@ -161,8 +161,9 @@ function handleSubmit(event){
 
   let newStore = new Store(name, minCust, maxCust, avgCookie);
   
-  storeInfo.push(newStore);
+  salesTable.deleteRow(-1);
   newStore.renderList();
+  renderFooter();
 
   myForm.reset();
 };
