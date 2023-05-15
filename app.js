@@ -19,11 +19,6 @@ let hours = [
 let salesTable = document.getElementById("salesTable");
 let storeInfo = [];
 
-
-
-
-
-
 // *** Constructor Function ***
 function Store(name, minCust, maxCust, avgCookie) {
   this.name = name;
@@ -161,8 +156,9 @@ function handleSubmit(event){
 
   let newStore = new Store(name, minCust, maxCust, avgCookie);
   
-  storeInfo.push(newStore);
+  salesTable.deleteRow(-1);
   newStore.renderList();
+  renderFooter();
 
   myForm.reset();
 };
